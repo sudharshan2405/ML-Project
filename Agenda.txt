@@ -1,0 +1,95 @@
+Agenda
+
+1 - Setup the github {Repository} by cloning it
+a) New Environment
+b) Decide Mini Project structure - setup.py
+c) Build a package
+
+README file - steps, descriptions
+
+Setup file ? - 
+
+1️⃣ What is a Python package?
+
+A package is basically:
+
+A folder containing Python code that can be imported and reused in other projects.
+
+Usually contains:
+
+Python files (.py) → functions, classes, etc.
+
+An __init__.py file (can be empty) → tells Python “this folder is a package”
+
+2️⃣ Why use a package?
+
+To organize your code
+
+To reuse code in multiple projects
+
+To share code with others
+
+What is setup.py?
+
+It’s a small Python file that tells Python how to install your project.
+
+Think of it as an instruction sheet for pip.
+
+Why you need it
+
+So you can run your project anywhere after installing it:
+
+pip install .
+
+
+So pip knows what other packages your project needs (like pandas, numpy).
+
+So you can share your project with others easily.
+
+Components: Is a package
+
+It’s a folder where you keep reusable, modular, independent pieces of code — not your main script,
+ but the building blocks of your project.
+
+Instead of writing everything inside app.py or main.py, 
+you split your project into multiple logical pieces.
+
+components/
+    data_ingestion.py
+    data_transformation.py
+    model_trainer.py
+    model_evaluation.py
+Each file does one job, which makes your project cleaner.
+
+2️⃣ To reuse code easily
+If different projects need the same component (like a preprocessing function), you can simply import it:
+
+python
+Copy code
+from components.data_transformation import DataTransformation
+No rewriting, no duplicate code.
+
+Create the py files in components, and under src create a pipeline folder
+
+Why logger is important?
+
+Shows what step your pipeline is currently running
+Helps debug when something goes wrong
+Saves logs to a file (logs/app.log)
+Used in production ML systems
+
+Exception:
+
+To catch errors in a clean and readable way, and provide better debugging information.
+
+Utils:
+To store common reusable functions that are used across components.
+
+Examples:
+save model
+load model
+read YAML file
+evaluate model
+save numpy or pickle files
+
+
